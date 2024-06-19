@@ -221,11 +221,11 @@
         "flake-parts": "flake-parts_4"
       },
       "locked": {
-        "lastModified": 1718785366,
-        "narHash": "sha256-BlNUdTwdBXmwpgjAnwRmovTnTVBMn2jOuilKH5kHANc=",
+        "lastModified": 1718787221,
+        "narHash": "sha256-auVTltt+GABueaGm1ZnsRY5znBpp78N33AAOlOYQU7U=",
         "owner": "esselius",
         "repo": "nixos-tests",
-        "rev": "f9d31b500249244a894490f11bf91ca26097f94f",
+        "rev": "5c9f69a81f36c25a227fd156f69bd626f1580979",
         "type": "github"
       },
       "original": {

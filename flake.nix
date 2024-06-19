@@ -7,14 +7,15 @@
     nixos-tests.url = "github:esselius/nixos-tests";
   };
 
-  outputs = inputs@{ self, flake-parts, ... }:
-    flake-parts.lib.mkFlake { inherit inputs; } ({ config, ... }: {
+  outputs = inputs@{ self, flake-parts, ... }: flake-parts.lib.mkFlake
+  { inherit inputs; }
+  {
       imports = [
         inputs.ez-configs.flakeModule
-
         inputs.nixos-tests.flakeModule
       ];
-      systems = [ "aarch64-darwin" ];
+
+      systems = [ "aarch64-linux" "aarch64-darwin" "x86_64-linux" "x86_64-darwin" ];
 
       ezConfigs = {
         root = ./.;
@@ -26,9 +27,9 @@
           path = ./tests;
           args = {
             inherit inputs;
-            myModules = config.flake.nixosModules;
+            myModules = self.nixosModules;
           };
         };
       };
-    });
+    };
 }
