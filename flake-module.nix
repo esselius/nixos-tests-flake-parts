@@ -9,14 +9,21 @@ in
   options = {
     perSystem = mkPerSystemOption ({ config, pkgs, ... }:
       let
-        testDriver = dir: file: "${(pkgs.testers.runNixOSTest (import (dir + file))).driver}/bin/nixos-test-driver";
-        mkApps = dir: concatMapAttrs (a: b: { "test-${removeSuffix ".nix" a}".program = testDriver dir ("/" + a); }) (readDir dir);
+        testDriver = path: (pkgs.testers.runNixOSTest (import path config.nixosTests.args)).driver;
+        nixosTests = dir: a: _: { ${removeSuffix ".nix" a} = testDriver (dir + ("/" + a)); };
+        mkLegacyPackages = dir: concatMapAttrs (nixosTests dir) (readDir dir);
       in
       {
-        options.tests.path = mkOption {
-          type = types.pathInStore;
+        options.nixosTests = {
+          path = mkOption {
+            type = types.pathInStore;
+          };
+          args = mkOption {
+            default = {};
+            type = types.attrsOf types.anything;
+          };
         };
-        config.apps = mkApps config.tests.path;
+        config.legacyPackages.nixosTests = mkLegacyPackages config.nixosTests.path;
       });
   };
 }
