@@ -4,6 +4,7 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
     ez-configs.url = "github:ehllie/ez-configs";
     authentik-nix.url = "github:nix-community/authentik-nix";
+    nixos-tests.url = "github:esselius/nixos-tests";
   };
 
   outputs = inputs@{ self, flake-parts, ... }:
@@ -11,7 +12,7 @@
       imports = [
         inputs.ez-configs.flakeModule
 
-        ./flake-module.nix
+        inputs.nixos-tests.flakeModule
       ];
       systems = [ "aarch64-darwin" ];
 

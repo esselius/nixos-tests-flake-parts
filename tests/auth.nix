@@ -4,7 +4,6 @@
   name = "auth";
   nodes.authentik = { ... }: {
     virtualisation = {
-      # cores = 3;
       memorySize = 2048;
     };
 

@@ -133,6 +133,24 @@
         "type": "github"
       }
     },
+    "flake-parts_4": {
+      "inputs": {
+        "nixpkgs-lib": "nixpkgs-lib_3"
+      },
+      "locked": {
+        "lastModified": 1717285511,
+        "narHash": "sha256-iKzJcpdXih14qYVcZ9QC9XuZYnPc6T8YImb6dX166kw=",
+        "owner": "hercules-ci",
+        "repo": "flake-parts",
+        "rev": "2a55567fcf15b1b1c7ed712a2c6fadaec7412ea8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hercules-ci",
+        "repo": "flake-parts",
+        "type": "github"
+      }
+    },
     "flake-utils": {
       "inputs": {
         "systems": "systems"
@@ -198,6 +216,24 @@
         "type": "github"
       }
     },
+    "nixos-tests": {
+      "inputs": {
+        "flake-parts": "flake-parts_4"
+      },
+      "locked": {
+        "lastModified": 1718785366,
+        "narHash": "sha256-BlNUdTwdBXmwpgjAnwRmovTnTVBMn2jOuilKH5kHANc=",
+        "owner": "esselius",
+        "repo": "nixos-tests",
+        "rev": "f9d31b500249244a894490f11bf91ca26097f94f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "esselius",
+        "repo": "nixos-tests",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1713714899,
@@ -233,6 +269,18 @@
       }
     },
     "nixpkgs-lib_2": {
+      "locked": {
+        "lastModified": 1717284937,
+        "narHash": "sha256-lIbdfCsf8LMFloheeE6N31+BMIeixqyQWbSr2vk79EQ=",
+        "type": "tarball",
+        "url": "https://github.com/NixOS/nixpkgs/archive/eb9ceca17df2ea50a250b6b27f7bf6ab0186f198.tar.gz"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://github.com/NixOS/nixpkgs/archive/eb9ceca17df2ea50a250b6b27f7bf6ab0186f198.tar.gz"
+      }
+    },
+    "nixpkgs-lib_3": {
       "locked": {
         "lastModified": 1717284937,
         "narHash": "sha256-lIbdfCsf8LMFloheeE6N31+BMIeixqyQWbSr2vk79EQ=",
@@ -309,6 +357,7 @@
         "authentik-nix": "authentik-nix",
         "ez-configs": "ez-configs",
         "flake-parts": "flake-parts_3",
+        "nixos-tests": "nixos-tests",
         "nixpkgs": "nixpkgs_3"
       }
     },
